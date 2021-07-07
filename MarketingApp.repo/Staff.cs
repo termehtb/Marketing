@@ -1,0 +1,60 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Text;
+using MarketingApp.Model.Staff;
+
+
+namespace MarketingApp.repo
+{
+    class Staff
+    {
+        public static int CreateStaff(SalesPerson salesperson)
+        {
+            int id;
+            using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-2C1HQML\SQLSERVER;Initial Catalog=parseh;Uid=;Pwd=;Connection Timeout=320500;"))
+            {
+                using (SqlCommand cmd = new SqlCommand("Staff_Create", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    SqlParameter param;
+
+                    try
+                    {
+                        con.Open();
+                        param = new SqlParameter("name", salesperson.Name);
+                        cmd.Parameters.Add(param);
+
+                        param = new SqlParameter("lastname", salesperson.Lastname);
+                        cmd.Parameters.Add(param);
+
+                        param = new SqlParameter("code", salesperson.Code);
+                        cmd.Parameters.Add(param);
+
+                        param = new SqlParameter("phone", salesperson.Phone_number);
+                        cmd.Parameters.Add(param);
+
+                        param = new SqlParameter("mobile", salesperson.Mobile);
+                        cmd.Parameters.Add(param);
+
+                        param = new SqlParameter("address", salesperson.Address);
+                        cmd.Parameters.Add(param);
+
+                        id = Convert.ToInt32(cmd.ExecuteScalar());
+                    }
+                    catch (Exception EX)
+                    {
+
+                        throw EX;
+                    }
+                    finally
+                    {
+                        if (con.State == ConnectionState.Open) con.Close();
+                    }
+                }
+            }
+            return id;
+        }
+    }
+}
