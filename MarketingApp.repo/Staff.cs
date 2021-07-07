@@ -56,5 +56,51 @@ namespace MarketingApp.repo
             }
             return id;
         }
+
+        public static void UpdateStaff(SalesPerson salesPerson)
+        {
+            using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-2C1HQML\SQLSERVER;Initial Catalog=parseh;Uid=;Pwd=;Connection Timeout=320500;"))
+            {
+                using (SqlCommand cmd = new SqlCommand("Staff_Update", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    SqlParameter param;
+
+                    try
+                    {
+                        con.Open();
+                        param = new SqlParameter("name", salesPerson.Name);
+                        cmd.Parameters.Add(param);
+
+                        param = new SqlParameter("lastname", salesPerson.Lastname);
+                        cmd.Parameters.Add(param);
+
+                        param = new SqlParameter("code", salesPerson.Code);
+                        cmd.Parameters.Add(param);
+                        param = new SqlParameter("phone", salesPerson.Phone_number);
+                        cmd.Parameters.Add(param);
+                        param = new SqlParameter("mobile", salesPerson.Mobile);
+                        cmd.Parameters.Add(param);
+                        param = new SqlParameter("address", salesPerson.Address);
+                        cmd.Parameters.Add(param);
+                      
+
+                        param = new SqlParameter("id", salesPerson.Id);
+                        cmd.Parameters.Add(param);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception EX)
+                    {
+
+                        throw EX;
+                    }
+                    finally
+                    {
+                        if (con.State == ConnectionState.Open) con.Close();
+                    }
+                }
+            }
+        }
     }
 }
