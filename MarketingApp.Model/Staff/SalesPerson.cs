@@ -13,6 +13,7 @@ namespace MarketingApp.Model.Staff
         private string phone_number;
         private string mobile;
         private string address;
+        private int commission;
 
         public int Id { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
@@ -21,5 +22,6 @@ namespace MarketingApp.Model.Staff
         public string Phone_number { get => phone_number; set => phone_number = value; }
         public string Mobile { get => mobile; set => mobile = value; }
         public string Address { get => address; set => address = value; }
+        public int Commission { get => commission; set => commission = value; }
     }
 }
