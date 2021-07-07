@@ -32,6 +32,9 @@ namespace MarketingApp.repo
                         param = new SqlParameter("code", salesperson.Code);
                         cmd.Parameters.Add(param);
 
+                        param = new SqlParameter("comission", salesperson.Commission);
+                        cmd.Parameters.Add(param);
+
                         param = new SqlParameter("phone", salesperson.Phone_number);
                         cmd.Parameters.Add(param);
 
@@ -77,6 +80,10 @@ namespace MarketingApp.repo
 
                         param = new SqlParameter("code", salesPerson.Code);
                         cmd.Parameters.Add(param);
+
+                        param = new SqlParameter("comission", salesPerson.Commission);
+                        cmd.Parameters.Add(param);
+
                         param = new SqlParameter("phone", salesPerson.Phone_number);
                         cmd.Parameters.Add(param);
                         param = new SqlParameter("mobile", salesPerson.Mobile);
