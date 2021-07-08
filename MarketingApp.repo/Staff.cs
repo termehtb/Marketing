@@ -32,7 +32,7 @@ namespace MarketingApp.repo
                         param = new SqlParameter("code", salesperson.Code);
                         cmd.Parameters.Add(param);
 
-                        param = new SqlParameter("comission", salesperson.Commission);
+                        param = new SqlParameter("commission", salesperson.Commission);
                         cmd.Parameters.Add(param);
 
                         param = new SqlParameter("phone", salesperson.Phone_number);
