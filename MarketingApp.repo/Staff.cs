@@ -142,5 +142,51 @@ namespace MarketingApp.repo
             }
             return completedata;
         }
+
+        public static List<SalesPerson> GetStaff()
+        {
+            List<SalesPerson> salesPeople = new List<SalesPerson>();
+            using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-2C1HQML\SQLSERVER;Initial Catalog=parseh;Uid=;Pwd=;Connection Timeout=320500;"))
+            {
+                using (SqlCommand cmd = new SqlCommand("Staff_Get", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader dr;
+
+                    try
+                    {
+                        con.Open();
+
+                        using (dr = cmd.ExecuteReader())
+                        {
+                            while (dr.Read())
+                            {
+                                salesPeople.Add(new SalesPerson
+                                {
+                                    Id = Convert.ToInt32(dr["ID"]),
+                                    Name = dr["name"].ToString(),
+                                    Lastname = dr["lastname"].ToString(),
+                                    Code =Convert.ToInt32(dr["user_code"]),
+                                    Commission = Convert.ToInt32(dr["comission"]),
+                                    Phone_number = dr["phone_num"].ToString(),
+                                    Mobile = dr["mobile"].ToString(),
+                                    Address = dr["address"].ToString(),
+                                });
+                            }
+                        }
+                        dr.Close();
+                    }
+                    catch (Exception EX)
+                    {
+
+                    }
+                    finally
+                    {
+                        if (con.State == ConnectionState.Open) con.Close();
+                    }
+                }
+            }
+            return salesPeople;
+        }
     }
 }
