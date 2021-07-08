@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MarketingApp.Model\MarketingApp.Model.csproj" />
+    <ProjectReference Include="..\MarketingApp.repo\MarketingApp.repo.csproj" />
+  </ItemGroup>
+
 </Project>
