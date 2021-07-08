@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketingApp.Model", "MarketingApp.Model\MarketingApp.Model.csproj", "{AC53111D-A4D2-428B-92F5-BB67F34A16BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarketingApp.Model", "MarketingApp.Model\MarketingApp.Model.csproj", "{AC53111D-A4D2-428B-92F5-BB67F34A16BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketingApp.repo", "MarketingApp.repo\MarketingApp.repo.csproj", "{C3A90CE7-3996-4034-9C3B-15B643A44E7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarketingApp.repo", "MarketingApp.repo\MarketingApp.repo.csproj", "{C3A90CE7-3996-4034-9C3B-15B643A44E7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketingApp.Web", "MarketingApp.Web\MarketingApp.Web.csproj", "{6E850B63-8787-4EFB-8CC4-E3D4B3AD276D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{C3A90CE7-3996-4034-9C3B-15B643A44E7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3A90CE7-3996-4034-9C3B-15B643A44E7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3A90CE7-3996-4034-9C3B-15B643A44E7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E850B63-8787-4EFB-8CC4-E3D4B3AD276D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E850B63-8787-4EFB-8CC4-E3D4B3AD276D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E850B63-8787-4EFB-8CC4-E3D4B3AD276D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E850B63-8787-4EFB-8CC4-E3D4B3AD276D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
