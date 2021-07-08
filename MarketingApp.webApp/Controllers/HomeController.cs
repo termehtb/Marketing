@@ -31,7 +31,7 @@ namespace MarketingApp.webApp.Controllers
 
         public ActionResult Salespersons()
         {
-            ViewBag.Message = "Your insert page.";
+            ViewBag.Salespersons = Staff.GetStaff();
 
             return View();
         }

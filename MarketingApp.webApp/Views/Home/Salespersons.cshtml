@@ -15,6 +15,20 @@
 <input id="txtaddress" />
 <a id="test" onclick="myfunction()">insert</a>
 
+<table>
+    <tr>
+        <td>نام</td>
+        <td>فامیلی</td>
+    </tr>
+    @foreach (var item in @ViewBag.Salespersons)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Lastname</td>
+        </tr>
+    }
+</table>
+
 <script type="text/javascript">
     function myfunction() {
         alert(2);
