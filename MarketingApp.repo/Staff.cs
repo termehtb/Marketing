@@ -109,5 +109,38 @@ namespace MarketingApp.repo
                 }
             }
         }
+
+        public static bool DeleteStaff(int id)
+        {
+            bool completedata = true;
+            using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-2C1HQML\SQLSERVER;Initial Catalog=parseh;Uid=;Pwd=;Connection Timeout=320500;"))
+            {
+                using (SqlCommand cmd = new SqlCommand("Staff_Delete", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    SqlParameter param;
+
+                    try
+                    {
+                        con.Open();
+
+                        param = new SqlParameter("id", id);
+                        cmd.Parameters.Add(param);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception EX)
+                    {
+
+                        completedata = false;
+                    }
+                    finally
+                    {
+                        if (con.State == ConnectionState.Open) con.Close();
+                    }
+                }
+            }
+            return completedata;
+        }
     }
 }
