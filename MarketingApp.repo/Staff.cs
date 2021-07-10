@@ -8,12 +8,12 @@ using MarketingApp.Model.Staff;
 
 namespace MarketingApp.repo
 {
-    class Staff
+    public static class Staff
     {
         public static int CreateStaff(SalesPerson salesperson)
         {
             int id;
-            using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-2C1HQML\SQLSERVER;Initial Catalog=parseh;Uid=;Pwd=;Connection Timeout=320500;"))
+            using (SqlConnection con = new SqlConnection(@"Data Source=;Initial Catalog=;Uid=;Pwd=; Connection Timeout=320500;"))
             {
                 using (SqlCommand cmd = new SqlCommand("Staff_Create", con))
                 {
@@ -32,7 +32,7 @@ namespace MarketingApp.repo
                         param = new SqlParameter("code", salesperson.Code);
                         cmd.Parameters.Add(param);
 
-                        param = new SqlParameter("comission", salesperson.Commission);
+                        param = new SqlParameter("commission", salesperson.Commission);
                         cmd.Parameters.Add(param);
 
                         param = new SqlParameter("phone", salesperson.Phone_number);
