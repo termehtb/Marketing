@@ -169,7 +169,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Salespersons.cshtml" />
-    <Content Include="Views\Home\Sales.cshtml" />
+    <Content Include="Views\Home\StaffList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -55,5 +55,13 @@ namespace MarketingApp.webApp.Controllers
 
             return salesPerson.Id;
         }
+
+        public ActionResult StaffList()
+        {
+            ViewBag.StaffList = Staff.GetStaff();
+
+            return View();
+        }
+
     }
 }
