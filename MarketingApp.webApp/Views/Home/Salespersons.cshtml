@@ -27,12 +27,24 @@
             color: white;
             padding: 14px 20px;
             margin: 8px 0;
+            margin-bottom : 30px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
         }
         form {
             width: 100%
+        }
+        #stafflist {
+            width: 100%;
+            background-color: blueviolet;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: solid;
+            border-radius: 4px;
+            cursor: pointer;
+            
         }
       
 
@@ -42,37 +54,26 @@
 
 <body>
     <h2>personel</h2>
-        <div>
-            <form>
-                <input type="text" id="txtname" name="firstname" placeholder="Your name.." />
+    <div>
+        <form>
+            <input type="text" id="txtname" name="firstname" placeholder="Your name.." />
 
-                <input type="text" id="txtlastname" name="lastname" placeholder="Your lastname.." />
+            <input type="text" id="txtlastname" name="lastname" placeholder="Your lastname.." />
 
-                <input type="text" id="txtcode" name="code" placeholder="code.." />
+            <input type="text" id="txtcode" name="code" placeholder="code.." />
 
-                <input type="text" id="txtcommission" name="commission" placeholder="commission" />
+            <input type="text" id="txtcommission" name="commission" placeholder="commission" />
 
-                <input type="text" id="txtphone" name="phone number" placeholder="phone number" />
+            <input type="text" id="txtphone" name="phone number" placeholder="phone number" />
 
-                <input type="text" id="txtmobile" name="mobile number" placeholder="mobile number.." />
-                <input type="text" id="txtaddress" name="address" placeholder="address" />
+            <input type="text" id="txtmobile" name="mobile number" placeholder="mobile number.." />
+            <input type="text" id="txtaddress" name="address" placeholder="address" />
 
-                <button id="test" onclick="myfunction()">insert</button>
-                </form>
-            </div>
-                <table>
-                    <tr>
-                        <td>نام</td>
-                        <td>فامیلی</td>
-                    </tr>
-                    @foreach (var item in @ViewBag.Salespersons)
-                    {
-                        <tr>
-                            <td>@item.Name</td>
-                            <td>@item.Lastname</td>
-                        </tr>
-                    }
-                </table>
+            <button id="test" onclick="myfunction()">insert</button>
+        </form>
+        <a id="stafflist" href="StaffList">staff list</a>
+
+
 </body>
 </html>
 <script type="text/javascript">
