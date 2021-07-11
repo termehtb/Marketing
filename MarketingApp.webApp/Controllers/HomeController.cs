@@ -39,21 +39,33 @@ namespace MarketingApp.webApp.Controllers
 
         public int createSalesperson()
         {
-            SalesPerson salesPerson = new SalesPerson
+            int id;
+            try
             {
-                Name = Request.Params["name"],
-                Lastname = Request.Params["lastname"],
-                Code = Convert.ToInt32(Request.Params["code"]),
-                Commission = Convert.ToInt32(Request.Params["commission"]),
-                Phone_number = Request.Params["phone"],
-                Mobile = Request.Params["mobile"],
-                Address = Request.Params["address"]
+                SalesPerson salesPerson = new SalesPerson
+                {
+                    Name = Request.Params["name"],
+                    Lastname = Request.Params["lastname"],
+                    Code = Convert.ToInt32(Request.Params["code"]),
+                    Commission = Convert.ToInt32(Request.Params["commission"]),
+                    Phone_number = Request.Params["phone"],
+                    Mobile = Request.Params["mobile"],
+                    Address = Request.Params["address"]
 
-            };
+                };
+                salesPerson.Id = Staff.CreateStaff(salesPerson);
+                id = salesPerson.Id;
 
-            salesPerson.Id = Staff.CreateStaff(salesPerson);
+            }
 
-            return salesPerson.Id;
+            catch (Exception Ex)
+            {
+                throw Ex;
+            }
+
+           
+
+            return id;
         }
 
         public ActionResult StaffList()

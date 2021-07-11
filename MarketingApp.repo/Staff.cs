@@ -13,7 +13,7 @@ namespace MarketingApp.repo
         public static int CreateStaff(SalesPerson salesperson)
         {
             int id;
-            using (SqlConnection con = new SqlConnection(@"Data Source=;Initial Catalog=;Uid=;Pwd=;Connection Timeout=320500;"))
+            using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-2C1HQML\SQLSERVER;Initial Catalog=parseh;Uid=sa;Pwd=sqlserverpass;Connection Timeout=320500;"))
             {
                 using (SqlCommand cmd = new SqlCommand("Staff_Create", con))
                 {
@@ -62,7 +62,7 @@ namespace MarketingApp.repo
 
         public static void UpdateStaff(SalesPerson salesPerson)
         {
-            using (SqlConnection con = new SqlConnection(@"Data Source=;Initial Catalog=;Uid=;Pwd=;Connection Timeout=320500;"))
+            using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-2C1HQML\SQLSERVER;Initial Catalog=parseh;Uid=sa;Pwd=sqlserverpass;Connection Timeout=320500;"))
             {
                 using (SqlCommand cmd = new SqlCommand("Staff_Update", con))
                 {
@@ -90,7 +90,7 @@ namespace MarketingApp.repo
                         cmd.Parameters.Add(param);
                         param = new SqlParameter("address", salesPerson.Address);
                         cmd.Parameters.Add(param);
-
+                      
 
                         param = new SqlParameter("id", salesPerson.Id);
                         cmd.Parameters.Add(param);
@@ -113,7 +113,7 @@ namespace MarketingApp.repo
         public static bool DeleteStaff(int id)
         {
             bool completedata = true;
-            using (SqlConnection con = new SqlConnection(@"Data Source=;Initial Catalog=;Uid=;Pwd=;Connection Timeout=320500;"))
+            using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-2C1HQML\SQLSERVER;Initial Catalog=parseh;Uid=sa;Pwd=sqlserverpass;Connection Timeout=320500;"))
             {
                 using (SqlCommand cmd = new SqlCommand("Staff_Delete", con))
                 {
@@ -146,7 +146,7 @@ namespace MarketingApp.repo
         public static List<SalesPerson> GetStaff()
         {
             List<SalesPerson> salesPeople = new List<SalesPerson>();
-            using (SqlConnection con = new SqlConnection(@"Data Source=;Initial Catalog=;Uid=;Pwd=;Connection Timeout=320500;"))
+            using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-2C1HQML\SQLSERVER;Initial Catalog=parseh;Uid=sa;Pwd=sqlserverpass;Connection Timeout=320500;"))
             {
                 using (SqlCommand cmd = new SqlCommand("Staff_Get", con))
                 {
@@ -166,7 +166,7 @@ namespace MarketingApp.repo
                                     Id = Convert.ToInt32(dr["ID"]),
                                     Name = dr["name"].ToString(),
                                     Lastname = dr["lastname"].ToString(),
-                                    Code = Convert.ToInt32(dr["user_code"]),
+                                    Code =Convert.ToInt32(dr["user_code"]),
                                     Commission = Convert.ToInt32(dr["comission"]),
                                     Phone_number = dr["phone_num"].ToString(),
                                     Mobile = dr["mobile"].ToString(),
