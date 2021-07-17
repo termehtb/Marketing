@@ -1,69 +1,33 @@
-﻿
+﻿@using System.Web.Optimization
+@using Kendo.Mvc.UI
+@using Kendo.Mvc.Extensions
+@Model MarketingApp.Model.Staff.SalesPerson
+
 @{
     ViewBag.Title = "StaffList";
 }
 
+@(Html.Kendo().Grid<MarketingApp.Model.Staff.SalesPerson>()
+    .Name("grid")
+    .Columns(columns => {
+        columns.Bound(p => p.Id);
+        columns.Bound(p => p.Name).Title("Name").Width(30).Filterable(false);
+        columns.Bound(p => p.Lastname);
+        columns.Bound(p => p.Code);
+        columns.Bound(p => p.Commission);
+        columns.Bound(p => p.Phone_number);
+        columns.Bound(p => p.Mobile);
+        columns.Bound(p => p.Address);
 
-<!DOCTYPE html>
-<html>
-<head>
-    <style>
-        #staff {
-            font-family: Arial, Helvetica, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-            margin-top: 30px;
-        }
-
-            #staff td, #staff th {
-                border: 1px solid #ddd;
-                padding: 8px;
-            }
-
-            #staff tr:nth-child(even) {
-                background-color: #f2f2f2;
-            }
-
-            #staff tr:hover {
-                background-color: #ddd;
-            }
-
-            #staff th {
-                padding-top: 12px;
-                padding-bottom: 12px;
-                text-align: left;
-                background-color: blueviolet;
-                color: white;
-            }
-    </style>
-</head>
-<body>
-
-    <table id="staff">
-        <tr>
-            <th>Name</th>
-            <th>Lastname</th>
-            <th>Code</th>
-            <th>Commission</th>
-            <th>phone_number</th>
-            <th>mobile</th>
-            <th>address</th>
-        </tr>
-        @foreach (var item in @ViewBag.StaffList)
-        {
-            <tr>
-                <td>@item.Name</td>
-                <td>@item.Lastname</td>
-                <td>@item.Code</td>
-                <td>@item.Commission</td>
-                <td>@item.Phone_number</td>
-                <td>@item.Mobile</td>
-                <td>@item.Address</td>
-
-            </tr>
-        }
-
-    </table>
-
-</body>
-</html>
+    })
+    .Pageable()
+    .Sortable()
+    .Scrollable()
+    .Filterable()
+    .HtmlAttributes(new { style = "height:550px;" })
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(20)
+        .Read(read => read.Action("GetStaff", "Home"))
+     )
+)

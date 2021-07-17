@@ -1,4 +1,6 @@
-﻿using MarketingApp.Model.Staff;
+﻿using Kendo.Mvc.Extensions;
+using Kendo.Mvc.UI;
+using MarketingApp.Model.Staff;
 using MarketingApp.repo;
 using System;
 using System.Collections.Generic;
@@ -40,31 +42,19 @@ namespace MarketingApp.webApp.Controllers
         public int createSalesperson()
         {
             int id;
-            try
+            SalesPerson salesPerson = new SalesPerson
             {
-                SalesPerson salesPerson = new SalesPerson
-                {
-                    Name = Request.Params["name"],
-                    Lastname = Request.Params["lastname"],
-                    Code = Convert.ToInt32(Request.Params["code"]),
-                    Commission = Convert.ToInt32(Request.Params["commission"]),
-                    Phone_number = Request.Params["phone"],
-                    Mobile = Request.Params["mobile"],
-                    Address = Request.Params["address"]
+                Name = Request.Params["name"],
+                Lastname = Request.Params["lastname"],
+                Code = Convert.ToInt32(Request.Params["code"]),
+                Commission = Convert.ToInt32(Request.Params["commission"]),
+                Phone_number = Request.Params["phone"],
+                Mobile = Request.Params["mobile"],
+                Address = Request.Params["address"]
 
                 };
                 salesPerson.Id = Staff.CreateStaff(salesPerson);
                 id = salesPerson.Id;
-
-            }
-
-            catch (Exception Ex)
-            {
-                throw Ex;
-            }
-
-           
-
             return id;
         }
 
@@ -73,6 +63,11 @@ namespace MarketingApp.webApp.Controllers
             ViewBag.StaffList = Staff.GetStaff();
 
             return View();
+        }
+
+        public ActionResult GetStaff([DataSourceRequest] DataSourceRequest request)
+        {
+            return Json(Staff.GetStaff().ToDataSourceResult(request));
         }
 
     }
