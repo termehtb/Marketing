@@ -1,4 +1,4 @@
-﻿
+﻿@using Kendo.Mvc.UI.Fluent
 @{
     ViewBag.Title = "Salespersons";
 }
@@ -54,18 +54,31 @@
     <h2>personel</h2>
     <div>
         <form>
-            <input type="text" id="txtname" name="firstname" placeholder="Your name.." />
 
-            <input type="text" id="txtlastname" name="lastname" placeholder="Your lastname.." />
+            <div>
+                @(Html.Kendo().TextBox()
+    .Name("txtname")
+    )
+                @(Html.Kendo().TextBox()
+    .Name("txtlastname")
+    )
+                @(Html.Kendo().TextBox()
+    .Name("txtcode")
+    )
+                @(Html.Kendo().TextBox()
+    .Name("txtcommission")
+    )
+                @(Html.Kendo().TextBox()
+    .Name("txtphone")
+    )
+                @(Html.Kendo().TextBox()
+    .Name("txtmobile")
+    )
+                @(Html.Kendo().TextBox()
+    .Name("txtaddress")
+    )
 
-            <input type="text" id="txtcode" name="code" placeholder="code.." />
-
-            <input type="text" id="txtcommission" name="commission" placeholder="commission" />
-
-            <input type="text" id="txtphone" name="phone number" placeholder="phone number" />
-
-            <input type="text" id="txtmobile" name="mobile number" placeholder="mobile number.." />
-            <input type="text" id="txtaddress" name="address" placeholder="address" />
+            </div>
 
         </form>
         <button id="test" onclick="myfunction()">insert</button>
@@ -105,3 +118,5 @@
 
 
 </script>
+
+
