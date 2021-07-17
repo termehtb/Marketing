@@ -11,7 +11,7 @@
     .Name("grid")
     .Columns(columns => {
         columns.Bound(p => p.Id);
-        columns.Bound(p => p.Name).Title("Name").Width(30).Filterable(false);
+        columns.Bound(p => p.Name).Title("Name");
         columns.Bound(p => p.Lastname);
         columns.Bound(p => p.Code);
         columns.Bound(p => p.Commission);
