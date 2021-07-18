@@ -33,76 +33,74 @@
 
 <body>
     <h2>personel</h2>
-    <div class="form-horizontal form-widgets col-sm-6">
 
-        <div class="form-group">
-            <label class="control-label col-sm-4" for="name">Name</label>
-            <div class="col-sm-8 col-md-6">
-                @(Html.Kendo().TextBox()
+        <div class="form-horizontal form-widgets col-sm-6">
+
+            <div class="form-group">
+                <label class="control-label col-sm-4" for="name">Name</label>
+                <div class="col-sm-8 col-md-6">
+                    @(Html.Kendo().TextBox()
                     .Name("txtname")
                     )
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-sm-4" for="lastname">Last Name</label>
-            <div class="col-sm-8 col-md-6">
-                @(Html.Kendo().TextBox()
+            <div class="form-group">
+                <label class="control-label col-sm-4" for="lastname">Last Name</label>
+                <div class="col-sm-8 col-md-6">
+                    @(Html.Kendo().TextBox()
                     .Name("txtlastname")
                     )
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-sm-4" for="code">Code</label>
-            <div class="col-sm-8 col-md-6">
-                @(Html.Kendo().TextBox()
+            <div class="form-group">
+                <label class="control-label col-sm-4" for="code">Code</label>
+                <div class="col-sm-8 col-md-6">
+                    @(Html.Kendo().TextBox()
                     .Name("txtcode")
                     )
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-sm-4" for="commission">Commission</label>
-            <div class="col-sm-8 col-md-6">
-                @(Html.Kendo().TextBox()
+            <div class="form-group">
+                <label class="control-label col-sm-4" for="commission">Commission</label>
+                <div class="col-sm-8 col-md-6">
+                    @(Html.Kendo().TextBox()
                     .Name("txtcommission")
                     )
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-sm-4" for="Phone">phone Number</label>
-            <div class="col-sm-8 col-md-6">
-                @(Html.Kendo().TextBox()
+            <div class="form-group">
+                <label class="control-label col-sm-4" for="Phone">phone Number</label>
+                <div class="col-sm-8 col-md-6">
+                    @(Html.Kendo().TextBox()
                     .Name("txtphone")
                     )
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-sm-4" for="mobile">Mobile</label>
-            <div class="col-sm-8 col-md-6">
-                @(Html.Kendo().TextBox()
+            <div class="form-group">
+                <label class="control-label col-sm-4" for="mobile">Mobile</label>
+                <div class="col-sm-8 col-md-6">
+                    @(Html.Kendo().TextBox()
                     .Name("txtmobile")
                     )
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-sm-4" for="address">Address</label>
-            <div class="col-sm-8 col-md-6">
-                @(Html.Kendo().TextBox()
+            <div class="form-group">
+                <label class="control-label col-sm-4" for="address">Address</label>
+                <div class="col-sm-8 col-md-6">
+                    @(Html.Kendo().TextBox()
                     .Name("txtaddress")
                     )
+                </div>
+            </div>
+            <div class="buttons-wrap">
+                <button id="test" onclick="myfunction()" class="k-button k-state-default">insert</button>
+                <a id="stafflist" href="StaffList" class="k-button k-state-default">staff list</a>
+
             </div>
         </div>
 
 
 
-    </div>
-
-
-    <div class="buttons-wrap">
-        <button id="test" onclick="myfunction()" class="k-button k-state-default">insert</button>
-        <a id="stafflist" href="StaffList" class="k-button k-state-default">staff list</a>
-
-    </div>
-    <br />
 
 
 </body>
