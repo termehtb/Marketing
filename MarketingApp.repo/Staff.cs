@@ -13,7 +13,7 @@ namespace MarketingApp.repo
         public static int CreateStaff(SalesPerson salesperson)
         {
             int id;
-            using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-2C1HQML\SQLSERVER;Initial Catalog=parseh;Uid=sa;Pwd=sqlserverpass;Connection Timeout=320500;"))
+            using (SqlConnection con = new SqlConnection(@"Data Source=;Initial Catalog=;Uid=;Pwd=;Connection Timeout=320500;"))
             {
                 using (SqlCommand cmd = new SqlCommand("Staff_Create", con))
                 {
@@ -146,7 +146,7 @@ namespace MarketingApp.repo
         public static List<SalesPerson> GetStaff()
         {
             List<SalesPerson> salesPeople = new List<SalesPerson>();
-            using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-2C1HQML\SQLSERVER;Initial Catalog=parseh;Uid=sa;Pwd=sqlserverpass;Connection Timeout=320500;"))
+            using (SqlConnection con = new SqlConnection(@"Data Source=;Initial Catalog=;Uid=;Pwd=;Connection Timeout=320500;"))
             {
                 using (SqlCommand cmd = new SqlCommand("Staff_Get", con))
                 {
