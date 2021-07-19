@@ -788,6 +788,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\kendo.modernizr.custom.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\2011.1.315\JavaScript.js" />
     <Content Include="Views\Shared\StyleSheet1.css" />
     <Content Include="Views\Style\StyleSheet.css" />
     <Content Include="Web.config" />

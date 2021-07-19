@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "Salespersons";
 }
-<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="~/Scripts/2011.1.315/JavaScript.js"></script>
 
 <html>
     <head>
@@ -11,7 +11,7 @@
         <meta name="robots" content="index,follow" />
         <meta name="viewport" content="width=decive-width, intial-scale=1" /> 
                     
-        <link rel="stylesheet" href="~/Views/Style/StyleSheet.css">
+        <link rel="stylesheet" href="~/Views/Style/StyleSheet.css"> 
 
     
    
@@ -86,33 +86,3 @@
         </div>
 </body>
 </html>
-<script type="text/javascript">
-    function myfunction() {
-        alert(2);
-        $.ajax({
-            type: 'POST',
-            cache: false,
-            url: '/Home/createSalesperson',
-            dataType: 'json',
-            data: {
-                name: $("#txtname").val(),
-                lastname: $("#txtlastname").val(),
-                code: parseInt($("#txtcode").val()),
-                commission: parseInt($("#txtcommission").val()),
-                phone: $("#txtphone").val(),
-                mobile: $("#txtmobile").val(),
-                address: $("#txtaddress").val()
-
-            },
-            error: function () {
-                alert('error')
-            },
-            success: function (result) {
-                alert(1);
-
-            }
-        });
-    }
-</script>
-
-
