@@ -17,16 +17,21 @@
         columns.Bound(p => p.Phone_number);
         columns.Bound(p => p.Mobile);
         columns.Bound(p => p.Address);
+        columns.Command(command => { command.Edit(); }).Width(250);
+
 
     })
+    .Editable(editable => editable.Mode(GridEditMode.PopUp))
     .Pageable()
     .Sortable()
     .Scrollable()
-    .Filterable()
     .HtmlAttributes(new { style = "height:550px;" })
     .DataSource(dataSource => dataSource
         .Ajax()
         .PageSize(20)
+        .Model(model => model.Id(p => p.Id))
         .Read(read => read.Action("GetStaff", "Home"))
+        .Update(update => update.Action("UpdateStaff", "Home"))
+
      )
 )

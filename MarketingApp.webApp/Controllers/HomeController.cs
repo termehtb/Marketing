@@ -70,5 +70,14 @@ namespace MarketingApp.webApp.Controllers
             return Json(Staff.GetStaff().ToDataSourceResult(request));
         }
 
+        public ActionResult UpdateStaff([DataSourceRequest] DataSourceRequest request, SalesPerson salesPerson)
+        {
+            if (salesPerson != null && ModelState.IsValid)
+            {
+                Staff.UpdateStaff(salesPerson);
+            }
+            return Json(new[] { salesPerson }.ToDataSourceResult(request, ModelState));
+        }
     }
-}
+
+    }
