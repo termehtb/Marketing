@@ -61,6 +61,7 @@ namespace MarketingApp.webApp.Controllers
         public ActionResult StaffList()
         {
             ViewBag.StaffList = Staff.GetStaff();
+            System.Diagnostics.Trace.WriteLine("update function");
 
             return View();
         }
@@ -69,14 +70,22 @@ namespace MarketingApp.webApp.Controllers
         {
             return Json(Staff.GetStaff().ToDataSourceResult(request));
         }
-
+        [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult UpdateStaff([DataSourceRequest] DataSourceRequest request, SalesPerson salesPerson)
         {
-            if (salesPerson != null && ModelState.IsValid)
-            {
-                Staff.UpdateStaff(salesPerson);
-            }
-            return Json(new[] { salesPerson }.ToDataSourceResult(request, ModelState));
+          
+            Staff.UpdateStaff(salesPerson);
+
+            return Json(new[] {salesPerson }.ToDataSourceResult(request, ModelState));
+        }
+
+        [AcceptVerbs(HttpVerbs.Post)]
+        public bool DeleteStaff ([DataSourceRequest] DataSourceRequest request, SalesPerson salesPerson)
+        {
+            bool deleted;
+            deleted = Staff.DeleteStaff(salesPerson.Id);
+            return deleted;
+            
         }
     }
 

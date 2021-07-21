@@ -17,73 +17,100 @@
    
     </head>
 
-<body>
-    <h2>personel</h2>
-    <div class="container">
-        <div class="form-horizontal form-widgets col-sm-6">
+    <body>
+        <h2>personel</h2>
+        <div class="container">
+            <div class="form-horizontal form-widgets col-sm-6">
 
-            <div class="form-group">
-                <label class="control-label col-sm-4" for="name">Name</label>
-                <div class="col-sm-8 col-md-6">
-                    @(Html.Kendo().TextBox()
+                <div class="form-group">
+                    <label class="control-label col-sm-4" for="name">Name</label>
+                    <div class="col-sm-8 col-md-6">
+                        @(Html.Kendo().TextBox()
                     .Name("txtname")
                     )
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-sm-4" for="lastname">Last Name</label>
-                <div class="col-sm-8 col-md-6">
-                    @(Html.Kendo().TextBox()
+                <div class="form-group">
+                    <label class="control-label col-sm-4" for="lastname">Last Name</label>
+                    <div class="col-sm-8 col-md-6">
+                        @(Html.Kendo().TextBox()
                     .Name("txtlastname")
                     )
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-sm-4" for="code">Code</label>
-                <div class="col-sm-8 col-md-6">
-                    @(Html.Kendo().TextBox()
+                <div class="form-group">
+                    <label class="control-label col-sm-4" for="code">Code</label>
+                    <div class="col-sm-8 col-md-6">
+                        @(Html.Kendo().TextBox()
                     .Name("txtcode")
                     )
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-sm-4" for="commission">Commission</label>
-                <div class="col-sm-8 col-md-6">
-                    @(Html.Kendo().TextBox()
+                <div class="form-group">
+                    <label class="control-label col-sm-4" for="commission">Commission</label>
+                    <div class="col-sm-8 col-md-6">
+                        @(Html.Kendo().TextBox()
                     .Name("txtcommission")
                     )
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-sm-4" for="Phone">phone Number</label>
-                <div class="col-sm-8 col-md-6">
-                    @(Html.Kendo().TextBox()
+                <div class="form-group">
+                    <label class="control-label col-sm-4" for="Phone">phone Number</label>
+                    <div class="col-sm-8 col-md-6">
+                        @(Html.Kendo().TextBox()
                     .Name("txtphone")
                     )
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-sm-4" for="mobile">Mobile</label>
-                <div class="col-sm-8 col-md-6">
-                    @(Html.Kendo().TextBox()
+                <div class="form-group">
+                    <label class="control-label col-sm-4" for="mobile">Mobile</label>
+                    <div class="col-sm-8 col-md-6">
+                        @(Html.Kendo().TextBox()
                     .Name("txtmobile")
                     )
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-sm-4" for="address">Address</label>
-                <div class="col-sm-8 col-md-6">
-                    @(Html.Kendo().TextBox()
+                <div class="form-group">
+                    <label class="control-label col-sm-4" for="address">Address</label>
+                    <div class="col-sm-8 col-md-6">
+                        @(Html.Kendo().TextBox()
                     .Name("txtaddress")
                     )
+                    </div>
+                </div>
+                <div>
+
+                    <a id="stafflist" href="StaffList">staff list</a>
+                    <button id="test" onclick="myfunction()">insert</button>
                 </div>
             </div>
-            <div>
-
-                <a id="stafflist" href="StaffList">staff list</a>
-                <button id="test" onclick="myfunction()">insert</button>
-            </div>
         </div>
-</div>
-</body>
+        <input id="del" />
+        <button id="beta" onclick="deletefuction()">delete</button>
+
+    </body>
 </html>
+
+<script type="text/javascript">
+    function deletefuction() {
+        alert(2);
+        $.ajax({
+            type: 'POST',
+            cache: false,
+            url: '/Home/DeleteStaff',
+            dataType: 'json',
+            data: {
+                id: parseInt($("#del").val())
+
+
+            },
+            error: function () {
+                alert('error')
+            },
+            success: function (result) {
+                alert(1);
+
+            }
+        });
+    }
+</script>

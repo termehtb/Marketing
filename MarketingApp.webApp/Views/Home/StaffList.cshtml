@@ -17,7 +17,7 @@
         columns.Bound(p => p.Phone_number);
         columns.Bound(p => p.Mobile);
         columns.Bound(p => p.Address);
-        columns.Command(command => { command.Edit(); }).Width(250);
+        columns.Command(command => { command.Edit(); command.Destroy(); }).Width(250);
 
 
     })
@@ -32,6 +32,8 @@
         .Model(model => model.Id(p => p.Id))
         .Read(read => read.Action("GetStaff", "Home"))
         .Update(update => update.Action("UpdateStaff", "Home"))
+        .Destroy(update => update.Action("DeleteStaff", "Home"))
+
 
      )
 )
