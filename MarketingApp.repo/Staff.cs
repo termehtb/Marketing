@@ -6,6 +6,7 @@ using System.Text;
 using MarketingApp.Model.Staff;
 
 
+
 namespace MarketingApp.repo
 {
     public static class Staff
@@ -62,8 +63,11 @@ namespace MarketingApp.repo
 
         public static void UpdateStaff(SalesPerson salesPerson)
         {
+            int i;
             using (SqlConnection con = new SqlConnection(@"Data Source=;Initial Catalog=;Uid=;Pwd=;Connection Timeout=320500;"))
             {
+                System.Diagnostics.Trace.WriteLine("update function");
+
                 using (SqlCommand cmd = new SqlCommand("Staff_Update", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -71,7 +75,10 @@ namespace MarketingApp.repo
 
                     try
                     {
-                        con.Open();
+                        cmd.Connection.Open();
+                        param = new SqlParameter("id", salesPerson.Id);
+                        cmd.Parameters.Add(param);
+
                         param = new SqlParameter("name", salesPerson.Name);
                         cmd.Parameters.Add(param);
 
@@ -81,7 +88,7 @@ namespace MarketingApp.repo
                         param = new SqlParameter("code", salesPerson.Code);
                         cmd.Parameters.Add(param);
 
-                        param = new SqlParameter("comission", salesPerson.Commission);
+                        param = new SqlParameter("commission", salesPerson.Commission);
                         cmd.Parameters.Add(param);
 
                         param = new SqlParameter("phone", salesPerson.Phone_number);
@@ -92,8 +99,6 @@ namespace MarketingApp.repo
                         cmd.Parameters.Add(param);
                       
 
-                        param = new SqlParameter("id", salesPerson.Id);
-                        cmd.Parameters.Add(param);
 
                         cmd.ExecuteNonQuery();
                     }
