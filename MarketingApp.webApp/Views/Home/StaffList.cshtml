@@ -6,6 +6,8 @@
     ViewBag.Title = "StaffList";
 }
 
+<link rel="stylesheet" href="~/Views/Style/gridStyle.css">
+
 @(Html.Kendo().Grid<MarketingApp.Model.Staff.SalesPerson>()
     .Name("grid")
     .Columns(columns => {
@@ -16,8 +18,8 @@
         columns.Bound(p => p.Commission);
         columns.Bound(p => p.Phone_number);
         columns.Bound(p => p.Mobile);
-        columns.Bound(p => p.Address);
-        columns.Command(command => { command.Edit(); command.Destroy(); }).Width(250);
+        columns.Bound(p => p.Address).Width(300);
+        columns.Command(command => { command.Edit(); command.Destroy(); }).Width(150);
 
 
     })
@@ -25,7 +27,6 @@
     .Pageable()
     .Sortable()
     .Scrollable()
-    .HtmlAttributes(new { style = "height:550px;" })
     .DataSource(dataSource => dataSource
         .Ajax()
         .PageSize(20)
