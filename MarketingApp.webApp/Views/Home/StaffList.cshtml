@@ -15,9 +15,9 @@
         columns.Bound(p => p.Name).Title("Name");
         columns.Bound(p => p.Lastname);
         columns.Bound(p => p.Code);
-        columns.Bound(p => p.Commission);
-        columns.Bound(p => p.Phone_number);
-        columns.Bound(p => p.Mobile);
+        columns.Bound(p => p.Commission).Width(100);
+        columns.Bound(p => p.Phone_number).Title("phone number").Width(120);
+        columns.Bound(p => p.Mobile).Width(120);
         columns.Bound(p => p.Address).Width(300);
         columns.Command(command => { command.Edit(); command.Destroy(); }).Width(150);
 
