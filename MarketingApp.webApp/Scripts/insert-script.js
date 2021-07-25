@@ -7,7 +7,7 @@
             url: '/Home/createSalesperson',
             dataType: 'json',
             data: {
-        name: $("#txtname").val(),
+                name: $("#txtname").val(),
                 lastname: $("#txtlastname").val(),
                 code: parseInt($("#txtcode").val()),
                 commission: parseInt($("#txtcommission").val()),
@@ -20,6 +20,20 @@
         alert('error')
     },
             success: function (result) {
+                $("#txtname").val(' ');
+                $("#txtlastname").val(' ');
+                $("#txtcode").val(' ');
+                $("#txtcommission").val(' ');
+                $("#txtphone").val(' ');
+                $("#txtmobile").val(' ');
+                $("#txtaddress").val(' ');
+
+
+
+
+                
+
+
         alert(1);
 
             }
