@@ -1,6 +1,5 @@
 ﻿ type="text/javascript"
     function myfunction() {
-        alert(2);
         $.ajax({
         type: 'POST',
             cache: false,
@@ -17,7 +16,7 @@
 
             },
             error: function () {
-        alert('error')
+        alert('خطا')
     },
             success: function (result) {
                 $("#txtname").val(' ');
@@ -34,7 +33,7 @@
                 
 
 
-        alert(1);
+        alert(' اطلاعات شما با موفقیت ثبت شد');
 
             }
         });
