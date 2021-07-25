@@ -1,5 +1,6 @@
 ﻿body {
     background-color: lavender;
+    float: right;
 }
 
 
@@ -19,6 +20,7 @@ button {
     color: white;
     padding: 12px 20px;
     border: none;
+    margin-right: 10px;
     border-radius: 4px;
     cursor: pointer;
     float: right;
