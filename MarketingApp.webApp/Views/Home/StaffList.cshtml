@@ -12,13 +12,13 @@
     .Name("grid")
     .Columns(columns => {
         columns.Bound(p => p.Id);
-        columns.Bound(p => p.Name).Title("Name");
-        columns.Bound(p => p.Lastname);
-        columns.Bound(p => p.Code);
-        columns.Bound(p => p.Commission).Width(100);
-        columns.Bound(p => p.Phone_number).Title("phone number").Width(120);
-        columns.Bound(p => p.Mobile).Width(120);
-        columns.Bound(p => p.Address).Width(300);
+        columns.Bound(p => p.Name).Title("نام");
+        columns.Bound(p => p.Lastname).Title(" نام خانوادگی");
+        columns.Bound(p => p.Code).Title("کد کاربری");
+        columns.Bound(p => p.Commission).Title("درصد پورسانت").Width(100);
+        columns.Bound(p => p.Phone_number).Title("تلفن").Width(120);
+        columns.Bound(p => p.Mobile).Title("تلفن همراه").Width(120);
+        columns.Bound(p => p.Address).Title("آدرس").Width(300);
         columns.Command(command => { command.Edit(); command.Destroy(); }).Width(150);
 
 
