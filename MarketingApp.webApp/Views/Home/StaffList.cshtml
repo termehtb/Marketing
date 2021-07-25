@@ -11,7 +11,7 @@
 @(Html.Kendo().Grid<MarketingApp.Model.Staff.SalesPerson>()
     .Name("grid")
     .Columns(columns => {
-        columns.Bound(p => p.Id);
+        columns.Bound(p => p.Id).Title("کد");
         columns.Bound(p => p.Name).Title("نام");
         columns.Bound(p => p.Lastname).Title(" نام خانوادگی");
         columns.Bound(p => p.Code).Title("کد کاربری");

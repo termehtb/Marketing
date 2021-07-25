@@ -14,7 +14,7 @@ namespace MarketingApp.repo
         public static int CreateStaff(SalesPerson salesperson)
         {
             int id;
-            using (SqlConnection con = new SqlConnection(@"Data Source=;Initial Catalog=;Uid=;Pwd=;Connection Timeout=320500;"))
+            using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-2C1HQML\SQLSERVER;Initial Catalog=parseh;Uid=sa;Pwd=sqlserverpass;Connection Timeout=320500;"))
             {
                 using (SqlCommand cmd = new SqlCommand("Staff_Create", con))
                 {
@@ -64,7 +64,7 @@ namespace MarketingApp.repo
         public static void UpdateStaff(SalesPerson salesPerson)
         {
             int i;
-            using (SqlConnection con = new SqlConnection(@"Data Source=;Initial Catalog=;Uid=;Pwd=;Connection Timeout=320500;"))
+            using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-2C1HQML\SQLSERVER;Initial Catalog=parseh;Uid=sa;Pwd=sqlserverpass;Connection Timeout=320500;"))
             {
                 System.Diagnostics.Trace.WriteLine("update function");
 
@@ -118,7 +118,7 @@ namespace MarketingApp.repo
         public static bool DeleteStaff(int id)
         {
             bool completedata = true;
-            using (SqlConnection con = new SqlConnection(@"Data Source=;Initial Catalog=;Uid=;Pwd=;Connection Timeout=320500;"))
+            using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-2C1HQML\SQLSERVER;Initial Catalog=parseh;Uid=sa;Pwd=sqlserverpass;Connection Timeout=320500;"))
             {
                 using (SqlCommand cmd = new SqlCommand("Staff_Delete", con))
                 {
@@ -151,7 +151,7 @@ namespace MarketingApp.repo
         public static List<SalesPerson> GetStaff()
         {
             List<SalesPerson> salesPeople = new List<SalesPerson>();
-            using (SqlConnection con = new SqlConnection(@"Data Source=;Initial Catalog=;Uid=;Pwd=;Connection Timeout=320500;"))
+            using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-2C1HQML\SQLSERVER;Initial Catalog=parseh;Uid=sa;Pwd=sqlserverpass;Connection Timeout=320500;"))
             {
                 using (SqlCommand cmd = new SqlCommand("Staff_Get", con))
                 {
